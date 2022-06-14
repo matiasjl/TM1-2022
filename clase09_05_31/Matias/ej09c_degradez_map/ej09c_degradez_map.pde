@@ -22,10 +22,34 @@ void draw(){
   //float colorcito = map( incremento, 0, 800, 0, 255 );
   float colorcito = map( incremento, escala1a, escala1b, escala2a, escala2b );
   
+  //LINEAS
   stroke( colorcito, 0, 0 );
   line( incremento, 0, incremento, height );
+  
+  //CIRCULO
+  //fill( colorcito, 0, 0 );
+  //noStroke();
+  //circle( width/2, height/2, 800-incremento );
   
   //actualizo variables
   incremento++;
   
+  //degradez fijo utilizando for, de tamaño ancho del mouse
+  //degradezConLineas(mouseX);
+  
+}
+
+void degradezConLineas(){
+  for( int i = 0 ; i < 800 ; i++ ){
+    float colorcito = map( i, escala1a, escala1b, escala2a, escala2b );
+    stroke( colorcito, 0, 0 );
+    line( i, 0, i, height );
+  }
+}
+void degradezConLineas( int ancho ){
+  for( int i = 0 ; i < ancho ; i++ ){
+    float colorcito = map( i, escala1a, ancho, escala2a, escala2b );
+    stroke( colorcito, 0, 0 );
+    line( i, 0, i, height );
+  }
 }
