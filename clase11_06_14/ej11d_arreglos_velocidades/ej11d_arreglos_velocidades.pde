@@ -1,5 +1,5 @@
 
-// c
+// dos arreglos para manejar una serie de objetos 
 
 float[] vel = new float[5];  //velocidad
 float[] x =  new float[5];   //posicion
