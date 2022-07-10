@@ -21,11 +21,21 @@ void draw(){
   
   for( int n = 0 ; n < 5 ; n++ ){
     //actualizo posición x sumando velocidad
-    x[n] += vel[n];
+    //x[n] += vel[n];
+    x[n] = x[n] + vel[n];  //lo mismo que la linea anterior
     //dibujo los cinco autos
     rect( x[n], n * 70 + 80, 100, 50 );
     //imprimo el valor de vel correspondiente
     text( vel[n], x[n], n * 70 + 80 );
   }
 
+}
+
+void keyPressed(){
+  //reinicio de variables
+  if( key == ' ' ){
+    for( int i = 0 ; i < x.length ; i++ ){
+      x[i] = 50;    
+    }
+  }
 }
